@@ -29,7 +29,7 @@ const videoSlice = createSlice({
       })
       .addCase(fetchVideo.rejected, (state, action) => {
         state.isLoading = false;
-        state.video = [];
+        state.video = {};
         state.isError = true;
         state.error = action.error?.message;
       });
