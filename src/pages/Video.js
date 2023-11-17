@@ -16,7 +16,7 @@ export default function Video() {
   const { videoId } = useParams();
 
   useEffect(() => {
-    dispatch(fetchVideo());
+    dispatch(fetchVideo(videoId));
   }, [dispatch, videoId]);
 
   const { id, title, description, link, tags } = video;
@@ -41,7 +41,7 @@ export default function Video() {
               <VideoDescription video={video} />
             </div>
 
-            <RelatedVideoList currentId={id} tags={tags} />
+            <RelatedVideoList currentVideoId={id} tags={tags} />
           </div>
         </div>
       </section>
